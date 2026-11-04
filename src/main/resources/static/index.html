@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EduStress AI · Summit UMC</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <span class="eyebrow">SUMMIT UMC · DEMONSTRAÇÃO ACADÊMICA</span>
+      <h1>EduStress AI</h1>
+      <p>Explore como um Random Forest classifica padrões de estresse estudantil.</p>
+    </div>
+  </header>
+  <main class="wrap">
+    <form id="form" class="card">
+      <h2>Perfil do estudante</h2>
+      <p>Carregue um perfil fictício e altere os valores para testar a previsão. Os números seguem as escalas da base do estudo.</p>
+      <div id="profiles" class="actions" aria-label="Perfis fictícios"></div>
+      <button id="submit" type="submit" disabled>Classificar perfil</button>
+      <p id="error" role="alert" hidden></p>
+      <div id="fields"></div>
+    </form>
+    <aside>
+      <section class="card" aria-labelledby="result-title">
+        <h2 id="result-title">Resultado da previsão</h2>
+        <div id="result" role="status">Carregue um perfil e selecione Classificar perfil.</div>
+        <p class="note">Use perfis fictícios nesta demonstração acadêmica. O resultado não tem finalidade diagnóstica.</p>
+      </section>
+      <section class="card">
+        <h2>Sobre o modelo</h2>
+        <p id="metric">Random Forest · 20 fatores</p>
+        <h3>Fatores de maior importância global</h3>
+        <ol id="importance"></ol>
+        <p class="note">O ranking descreve o modelo inteiro. A importância mede associação na base do estudo.</p>
+      </section>
+    </aside>
+  </main>
+  <footer class="wrap">EduStress AI · Universidade de Mogi das Cruzes</footer>
+</body>
+</html>

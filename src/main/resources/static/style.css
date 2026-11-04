@@ -1,0 +1,41 @@
+:root {
+  color-scheme: light;
+  font-family: system-ui, sans-serif;
+  color: #251941;
+  background: #f5f2fa;
+  --accent: #6035b5;
+}
+* { box-sizing: border-box; }
+body { margin: 0; }
+.wrap { width: min(1120px, calc(100% - 2rem)); margin-inline: auto; }
+header { background: #28164c; color: #fff; padding: 2.6rem 0; }
+.eyebrow { color: #ded0fc; font-size: .8rem; letter-spacing: .12em; font-weight: 700; }
+h1 { margin: .4rem 0; font-size: clamp(2.6rem, 8vw, 4.2rem); line-height: 1; }
+h2 { margin: 0; font-size: 1.25rem; }
+h3 { font-size: .95rem; margin-top: 1.4rem; }
+p { line-height: 1.5; }
+header p { margin-bottom: 0; }
+main { display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr); gap: 1rem; padding-block: 1.2rem; }
+.card { background: #fff; padding: 1.3rem; border: 1px solid #e5ddf1; border-radius: 1rem; }
+aside .card + .card { margin-top: 1rem; }
+.actions { display: flex; flex-wrap: wrap; gap: .5rem; }
+button { font: inherit; font-weight: 650; cursor: pointer; padding: .65rem .9rem; border-radius: .55rem; }
+.actions button { background: #f1eaff; border: 1px solid #d7c8f1; color: #482486; }
+#submit { background: var(--accent); color: #fff; border: 1px solid transparent; margin-top: .8rem; }
+#submit:disabled { opacity: .55; cursor: wait; }
+fieldset { margin: 1.15rem 0 0; border: 1px solid #e5ddf1; border-radius: .7rem; padding: .8rem; }
+legend { font-weight: 700; padding-inline: .3rem; }
+.inputs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; }
+label { display: grid; gap: .25rem; font-size: .87rem; font-weight: 600; }
+small, .note { color: #5f5470; font-size: .83rem; }
+input { width: 100%; padding: .48rem; border: 1px solid #baafce; border-radius: .4rem; font: inherit; }
+:focus-visible { outline: 3px solid #9465ed; outline-offset: 2px; }
+#result { margin-top: .9rem; }
+.level { display: block; font-size: 2rem; margin-bottom: .5rem; color: var(--accent); }
+.score { display: grid; grid-template-columns: 5rem 1fr 3.5rem; align-items: center; gap: .5rem; font-size: .86rem; margin-top: .4rem; }
+progress { width: 100%; accent-color: var(--accent); }
+li { margin-block: .35rem; }
+#error { color: #a32335; }
+footer { padding-bottom: 1.3rem; color: #5f5470; font-size: .85rem; }
+@media (max-width: 740px) { main { grid-template-columns: 1fr; } }
+@media (max-width: 380px) { .inputs { grid-template-columns: 1fr; } }
