@@ -1,3 +1,4 @@
 /target/
+/.venv/
 /Summit-UMC-DiabeTech-main/
 __pycache__/

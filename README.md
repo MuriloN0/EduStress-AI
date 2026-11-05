@@ -1,18 +1,18 @@
 # EduStress AI
 
-Demonstração acadêmica do estudo da UMC sobre classificação de estresse estudantil. A aplicação recebe 20 fatores e executa em Java o Random Forest treinado com a base do estudo. A página é servida pelo Spring Boot e usa HTML, CSS e JavaScript.
+Demonstração acadêmica do estudo da UMC sobre classificação de estresse estudantil. A API REST em Python e Flask recebe 20 fatores e executa o Random Forest exportado do treinamento do estudo. O Flask também serve o front-end em HTML, CSS e JavaScript da pasta `static/`.
 
 ## Executar a demonstração
 
-Com Java 21, rode o JAR já compilado a partir desta pasta.
+Com Python 3.12, execute os comandos a partir desta pasta.
 
 ```powershell
-java -jar target/edustress-ai-1.0.0.jar
+python -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+.\.venv\Scripts\python.exe app.py
 ```
 
-Abra [a demonstração local](http://localhost:8080). Se a porta 8080 estiver ocupada, acrescente `--server.port=8081` ao comando e abra a porta 8081. O JAR inclui o modelo e a página, portanto funciona sem internet e sem Python.
-
-Para gerar o JAR novamente com Maven, use `mvn package`.
+Abra [a demonstração local](http://127.0.0.1:8080). Se a porta 8080 estiver ocupada, use `.\.venv\Scripts\python.exe -m flask --app app run --port 8081`. Depois da instalação do Flask, a demonstração roda offline com o modelo incluído em `model/forest.json`.
 
 ## Roteiro para o Summit
 
@@ -50,5 +50,4 @@ Para reproduzir a exportação, instale Python com pandas 2.3.3 e scikit-learn 1
 
 ```powershell
 python tools/export_model.py 'caminho/para/StressLevelDataset.csv'
-mvn package
 ```

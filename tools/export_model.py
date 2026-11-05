@@ -1,4 +1,4 @@
-"""Reproduce the study's training and export the forest for offline Java inference."""
+"""Reproduce the study's training and export the forest for offline inference."""
 import json
 import sys
 from pathlib import Path
@@ -55,7 +55,7 @@ def main(csv):
         "confusionMatrix": confusion_matrix(y_test, forest.predict(test)).tolist(),
         "trees": [export_tree(tree) for tree in forest.estimators_],
     }
-    output = Path(__file__).resolve().parents[1] / "src/main/resources/forest.json"
+    output = Path(__file__).resolve().parents[1] / "model/forest.json"
     output.write_text(json.dumps(model, separators=(",", ":")), encoding="utf-8")
     print(search.best_params_, model["accuracy"], model["confusionMatrix"])
 
